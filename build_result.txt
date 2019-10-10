@@ -1,0 +1,17 @@
+gcc -Wall -O0 -I../../AMP/cfg -I../../AMP/core -I../../AMP/drive -I../../AMP/inc -I../../AMP/port -c ../../AMP/core/AMP.c -o ../../AMP/core/AMP.o
+gcc -Wall -O0 -I../../AMP/cfg -I../../AMP/core -I../../AMP/drive -I../../AMP/inc -I../../AMP/port -c ../../AMP/drive/TDA7388.c -o ../../AMP/drive/TDA7388.o
+gcc -Wall -O0 -I../../AMP/cfg -I../../AMP/core -I../../AMP/drive -I../../AMP/inc -I../../AMP/port -c ../../AMP/drive/TDF8541.c -o ../../AMP/drive/TDF8541.o
+gcc -Wall -O0 -I../../AMP/cfg -I../../AMP/core -I../../AMP/drive -I../../AMP/inc -I../../AMP/port -c ../../AMP/port/AMP_Port.c -o ../../AMP/port/AMP_Port.o
+gcc -Wall -O0 -I../../AMP/cfg -I../../AMP/core -I../../AMP/drive -I../../AMP/inc -I../../AMP/port -o .//main.elf  ../../AMP/core/AMP.o ../../AMP/drive/TDA7388.o ../../AMP/drive/TDF8541.o ../../AMP/port/AMP_Port.o
+../../AMP/core/AMP.o:AMP.c:(.text+0x7b): undefined reference to `TDF853x_Init'
+../../AMP/core/AMP.o:AMP.c:(.text+0xbd): undefined reference to `TDF853x_IsInitOk'
+../../AMP/core/AMP.o:AMP.c:(.text+0x10f): undefined reference to `TDF853x_Diag_Start'
+../../AMP/core/AMP.o:AMP.c:(.text+0x175): undefined reference to `TDF853x_Diag_Finish'
+../../AMP/core/AMP.o:AMP.c:(.text+0x1ad): undefined reference to `TDF853x_Diag_Finish'
+../../AMP/core/AMP.o:AMP.c:(.text+0x225): undefined reference to `TDF853x_DeInit'
+../../AMP/core/AMP.o:AMP.c:(.text+0x300): undefined reference to `TDF853x_Diag_GetResult'
+../../AMP/core/AMP.o:AMP.c:(.text+0x322): undefined reference to `TDF853x_SetMute'
+../../AMP/core/AMP.o:AMP.c:(.text+0x345): undefined reference to `TDF853x_SetStandby'
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:13: main.elf] Error 1
